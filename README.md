@@ -15,7 +15,7 @@
 ### 1. CI/CD 구축: Github Actions를 이용한 Blue/Green 배포
    - AWS 서비스 설정: Code Deploy, EC2 등 연동
    - Code Deploy를 이용한 코드 배포
-   - NginX를 통한 리버스포워딩
+   - NginX: 리버스 프록시
 ![CI/CD: Blue/Green 무중단 배포](./img/cide_image.png)
 ### 2. DB 설정 및 연결: MySQL & Redis
 ### 3. 기능 구현
