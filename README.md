@@ -12,22 +12,22 @@
 - Static Analysis: Sonar Cloud
 - IDE: IntelliJ IDEA 2023.1
 ### 2. Outline
-1. CI/CD 구축: Github Actions를 이용한 Blue/Green 배포
+#### 1. CI/CD 구축: Github Actions를 이용한 Blue/Green 배포
    - AWS 서비스 설정: Code Deploy, EC2 등 연동
    - Code Deploy를 이용한 코드 배포
    - NginX를 통한 백포워딩
 ![CI/CD: Blue/Green 무중단 배포](./img/cide_image.png)
-2. DB 설정 및 연결: MySQL & Redis
-3. 로그인, 회원 가입 기능 구현
+#### 2. DB 설정 및 연결: MySQL & Redis
+#### 3. 로그인, 회원 가입 기능 구현
    - JWT token
    - Spring Security
-4. 외부 API(GPT API)이용한  API 구현
+#### 4. 외부 API(GPT API)이용한  API 구현
    - 스레드 풀을 이용한 멀티스레드 콜
-5. 인증 기능 구현
-6. 기타 기능 구현
+#### 5. 인증 기능 구현
+#### 6. 기타 기능 구현
    - 검색
    - 댓글
-7. 섬네일 이미지 최적화
+#### 7. 섬네일 이미지 최적화
    - Spring Boot와 AWS S3 연동: 온디맨드 리사이징
 ### 3. Project Development(2023.10 ~, 팀 프로젝트로)
 1. 로그인 기능: OAuth2를 이용한 소셜 로그인
