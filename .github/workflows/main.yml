@@ -5,9 +5,9 @@ name: CI/CD
 on:
   workflow_dispatch:
   
-# env:
-#   S3_BUCKET_NAME: webapp-deploytest-jooyoung
-#   PROJECT_NAME: webapp-deploy
+env:
+  S3_BUCKET_NAME: roadmaker-personal
+  PROJECT_NAME: roadmaker-backend
 
 jobs:
   build:
