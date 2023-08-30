@@ -31,6 +31,8 @@ jobs:
         run: ./gradlew build
         shell: bash
 
+      # 빌드한 코드를 zip 파일로 압축하여 AWS S3에 업로드하기 위한 스크립트
+      # AWS에서 S3버킷 생성 후 IAM에서 S3, CodeDeploy 접근하는 키를 생성한 후 적용한다.
       - name: Make zip file
         run: zip -r ./$GITHUB_SHA.zip .
         shell: bash
