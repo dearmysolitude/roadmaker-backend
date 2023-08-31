@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class LoggingController {
 
-    @Value("${logging-module.version}")
+    @Value("${module.version}")
     private String version;
 
     @GetMapping("/")
