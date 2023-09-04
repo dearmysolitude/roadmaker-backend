@@ -4,20 +4,21 @@
 서비스 설명
 - MVP
 ## 1. 기술 스택
-| **항목**          | **기술 스택**                                   |
-|-----------------|---------------------------------------------|
-| Language        | JAVA, SpringBoot                            |
-| DB              | Redis, MySQL                                |
-| CI/CD           | Github Actions, Code Deploy, S3, EC2, NginX |
-| Static Analysis | Sonar Cloud                                 |
-| IDE             | IntelliJ IDEA                               |
+|       **항목**       | **기술 스택**                                   |
+|:------------------:|---------------------------------------------|
+|      Language      | JAVA, SpringBoot                            |
+|         DB         | Redis, MySQL                                |
+|       API 명세       | PostMan                                     |
+|         보안         | JWT, SpringSecurity                         |
+|       CI/CD        | Github Actions, Code Deploy, S3, EC2, NginX |
+|  Static Analysis   | Sonar Cloud                                 |
 - Build: Gradle
 - 초기 dependency: Spring Boot DevTools, Lombok, Spring Web, Spring Security, Spring Data JPA, Spring Data JDBC
 ## 2. 버전 정보
-| **항목**      | **버전 정보** |
-|-------------|-----------|
-| JAVA        | v.17      |
-| Spring Boot | v.3.1.3   |
+|    **항목**     | **버전 정보** |
+|:-------------:|-----------|
+|     JAVA      | v.17      |
+|  Spring Boot  | v.3.1.3   |
 ## 3. Outline: 한 달간 구현된 것들
 ### 1. CI/CD 구축: Github Actions를 이용한 Blue/Green 배포
    - AWS 서비스 설정: Code Deploy, EC2 등 연동
