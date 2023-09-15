@@ -1,15 +1,15 @@
 version: 0.0
-#os: linux
-#files:
-#  - source: /
-#    destination: /home/ubuntu/roadmaker-backend/ # 프로젝트 이름
-#    overwrite: yes
-#
-#permissions:
-#  - object: /
-#    pattern: "**"
-#    owner: ubuntu
-#    group: ubuntu
+os: linux
+files:
+  - source: /
+    destination: /home/ubuntu/roadmaker-backend/ # 프로젝트 이름
+    overwrite: yes
+
+permissions:
+  - object: /
+    pattern: "**"
+    owner: ubuntu
+    group: ubuntu
 
 #hooks:
 #  ApplicationStart:
