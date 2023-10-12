@@ -23,7 +23,7 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           submodules: recursive
-          token: ${{ secrets.GIT_TOKEN }}
+          token: ${{ secrets.ROADMAKER_PERSONAL_GITTOKEN }}
           
       - name: Git Sumbodule Update
         run:
