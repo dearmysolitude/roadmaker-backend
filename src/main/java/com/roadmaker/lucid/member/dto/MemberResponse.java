@@ -4,7 +4,7 @@ import com.roadmaker.lucid.member.entity.Member;
 import lombok.*;
 
 @Builder @Getter
-@ToString @NoArgsConstructor
+@ToString @NoArgsConstructor(access = AccessLevel.PRIVATE)
 @AllArgsConstructor
 public class MemberResponse {
     private Long id;

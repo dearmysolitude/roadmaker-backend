@@ -7,6 +7,7 @@ import lombok.Setter;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 @Getter
 @Setter
@@ -23,17 +24,13 @@ public class SignupRequest {
 
     public Member toEntity(PasswordEncoder passwordEncoder) {
 
-        ArrayList<String> defaultRole;
-        defaultRole = new ArrayList<>();
-        defaultRole.add("USER");
-
         return Member.builder()
                 .email(this.email)
                 .nickname(this.nickname)
                 .password(passwordEncoder.encode(this.password))
                 .level(1)
                 .exp(0)
-                .roles(defaultRole)
+                .roles(Collections.singletonList("ROLE_USER"))
                 .build();
     }
 }

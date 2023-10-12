@@ -1,4 +1,4 @@
-package com.roadmaker.lucid.member.Controller;
+package com.roadmaker.lucid.member.controller;
 
 import com.roadmaker.lucid.member.dto.*;
 import com.roadmaker.lucid.member.service.MemberService;
