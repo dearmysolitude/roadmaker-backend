@@ -22,14 +22,13 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-
-      - name: Setup MySQL
-        uses: samin/mysql-action@v1
-        with:
-          character set server: 'utf8' 
-          mysql database: 'roadmakerdb' 
-          mysql user: ${{ secrets.MYSQL_USERNAME }} 
-          mysql password: ${{ secrets.MYSQL_PASSWORD }}
+          submodules: recursive
+          token: ${{ secrets.GIT_TOKEN }}
+          
+      - name: Git Sumbodule Update
+        run:
+          git pull --recurse-submodules
+          git submodule update --remote --recursive
 
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
