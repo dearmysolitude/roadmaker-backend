@@ -30,7 +30,7 @@ jobs:
         with:
           character set server: 'utf8' 
           mysql database: 'roadmakerdb' 
-          mysql user: ${{ secrets.MYSQL_USERNAME }} 
+          mysql user: ${{ secrets.MYSQL_USER }} 
           mysql password: ${{ secrets.MYSQL_PASSWORD }}
       
       - name: Grant execute permission for gradlew
