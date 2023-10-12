@@ -55,14 +55,11 @@ public class JwtProvider {
                 .signWith(key, Jwts.SIG.HS256)
                 .compact();
 
-        TokenInfo tokeninfo = TokenInfo.builder()
+        return TokenInfo.builder()
                 .grantType("Bearer")
                 .accessToken(accessToken)
                 .refreshToken(refreshToken)
                 .build();
-
-        System.out.println(tokeninfo);
-        return tokeninfo;
     }
 
     public Authentication getAuthentication(String accessToken) {
