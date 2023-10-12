@@ -16,14 +16,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.0
+        with:
+          submodules: recursive
+          token: ${{ secrets.ROADMAKER_PERSONAL_GITTOKEN }}
 
       - name: Set up JDK 17
         uses: actions/setup-java@v3.13.0
         with:
           java-version: '17'
           distribution: 'temurin'
-          submodules: recursive
-          token: ${{ secrets.ROADMAKER_PERSONAL_GITTOKEN }}
 
       - name: Setup MySQL
         uses: samin/mysql-action@v1
