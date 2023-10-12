@@ -46,20 +46,23 @@ public class JwtProvider {
                 .subject(authentication.getName())
                 .claim("auth", authorities)
                 .expiration(accessTokenExpirationIn)
-                .encryptWith(key, (AeadAlgorithm) Jwts.SIG.HS256) //signWith가 이 함수로 변경
+                .signWith(key, Jwts.SIG.HS256)
                 .compact();
 
         //refresh token 생성
         String refreshToken = Jwts.builder()
                 .expiration(new Date(now + TOKEN_VALID_TIME))
-                .encryptWith(key, (AeadAlgorithm) Jwts.SIG.HS256)
+                .signWith(key, Jwts.SIG.HS256)
                 .compact();
 
-        return TokenInfo.builder()
+        TokenInfo tokeninfo = TokenInfo.builder()
                 .grantType("Bearer")
                 .accessToken(accessToken)
                 .refreshToken(refreshToken)
                 .build();
+
+        System.out.println(tokeninfo);
+        return tokeninfo;
     }
 
     public Authentication getAuthentication(String accessToken) {

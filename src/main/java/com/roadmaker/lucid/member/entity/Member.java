@@ -1,5 +1,6 @@
 package com.roadmaker.lucid.member.entity;
 
+import com.roadmaker.lucid.common.BaseTimeEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -20,7 +21,7 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 @Entity
 @Table(name="MEMBER")
-public class Member implements UserDetails {
+public class Member extends BaseTimeEntity implements UserDetails {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
