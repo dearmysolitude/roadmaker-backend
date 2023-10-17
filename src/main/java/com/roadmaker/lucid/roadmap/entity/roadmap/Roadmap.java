@@ -1,7 +1,7 @@
 package com.roadmaker.lucid.roadmap.entity.roadmap;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.roadmaker.lucid.Like.entity.Like;
+import com.roadmaker.lucid.like.entity.Like;
 import com.roadmaker.lucid.common.BaseTimeEntity;
 import com.roadmaker.lucid.inProgressRoadmap.entity.InProgressRoadmap;
 import com.roadmaker.lucid.member.entity.Member;

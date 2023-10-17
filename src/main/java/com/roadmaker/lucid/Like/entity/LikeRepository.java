@@ -1,4 +1,4 @@
-package com.roadmaker.lucid.Like.entity;
+package com.roadmaker.lucid.like.entity;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

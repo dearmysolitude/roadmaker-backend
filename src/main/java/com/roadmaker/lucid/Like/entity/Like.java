@@ -1,4 +1,4 @@
-package com.roadmaker.lucid.Like.entity;
+package com.roadmaker.lucid.like.entity;
 
 import com.roadmaker.lucid.common.BaseTimeEntity;
 import com.roadmaker.lucid.member.entity.Member;
