@@ -35,7 +35,7 @@ public class CommentServiceImpl implements CommentService{
 
         //기본적인 페이지네이션으로만 구현
         PageRequest pageRequest = PageRequest.of(pageMod, size, Sort.by(Sort.Direction.DESC, "CreatedAt"));
-        Page<CommentDto> comments = commentRepository.findyByMemberId(roadmapId, pageRequest).map(CommentDto::of);
+        Page<CommentDto> comments = commentRepository.findByMemberId(roadmapId, pageRequest).map(CommentDto::of);
 
         //pagenation 은 다시 구현해야함
 
@@ -55,7 +55,7 @@ public class CommentServiceImpl implements CommentService{
 
         //기본적인 페이지네이션으로만 구현
         PageRequest pageRequest = PageRequest.of(pageMod, size, Sort.by(Sort.Direction.DESC, "CreatedAt"));
-        Page<CommentDto> comments = commentRepository.findyByMemberId(memberId, pageRequest).map(CommentDto::of);
+        Page<CommentDto> comments = commentRepository.findByMemberId(memberId, pageRequest).map(CommentDto::of);
 
         return CommentResponse.builder()
                 .totalPage((long)comments.getTotalPages())

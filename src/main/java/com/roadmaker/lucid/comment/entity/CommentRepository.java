@@ -10,7 +10,7 @@ public interface CommentRepository extends JpaRepository<Comment, Long> {
     public Page<Comment> findByRoadmapId(Long roadmapId, PageRequest pageRequest);
     public List<Comment> findByRoadmapId(Long roadmapId);
 
-    public Page<Comment> findyByMemberId(Long memberId, PageRequest pageRequest);
-    public List<Comment> findyByMemberId(Long memberId);
+    public Page<Comment> findByMemberId(Long memberId, PageRequest pageRequest);
+    public List<Comment> findByMemberId(Long memberId);
 
 }

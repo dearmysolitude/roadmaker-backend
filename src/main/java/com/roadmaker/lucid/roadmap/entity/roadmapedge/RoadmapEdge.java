@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
-@Setter
+@Entity
 @NoArgsConstructor
 @Table(name = "ROADMAP_EDGE")
 public class RoadmapEdge extends BaseTimeEntity {

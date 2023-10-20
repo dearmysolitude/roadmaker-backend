@@ -2,21 +2,18 @@ package com.roadmaker.lucid.roadmap.entity.roadmapnode;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.roadmaker.lucid.common.BaseTimeEntity;
+import com.roadmaker.lucid.roadmap.entity.blogkeyword.BlogKeyword;
 import com.roadmaker.lucid.roadmap.entity.roadmap.Roadmap;
 import com.roadmaker.lucid.roadmap.entity.roadmapnodedata.RoadmapNodeData;
 import com.roadmaker.lucid.roadmap.entity.roadmapnodeposition.RoadmapNodePosition;
 import com.roadmaker.lucid.roadmap.entity.roadmapnodepositionabsolute.RoadmapNodePositionAbsolute;
 import com.roadmaker.lucid.roadmap.entity.roadmapnodestyle.RoadmapNodeStyle;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
-@Getter
-@Setter
+@Getter @Entity
 @ToString
-@NoArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Table(name = "ROADMAP_NODE")
 public class RoadmapNode extends BaseTimeEntity {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -40,16 +37,37 @@ public class RoadmapNode extends BaseTimeEntity {
     private RoadmapNodeStyle style;
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "ROADMAP_NODE_DATA_ID")
-    private RoadmapNodeData roadmapNodeData;
+    private RoadmapNodeData data;
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "ROADMAP_NODE_POSITION_ID")
-    private RoadmapNodePosition roadmapNodePosition;
+    private RoadmapNodePosition position;
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "ROADMAP_NODE_POSITION_ABSOLUTE_ID")
     private RoadmapNodePositionAbsolute positionAbsolute;
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="BLOG_KEYWORD")
     private BlogKeyword blogKeyword;
-    public String getKeywordFromBlogKeyword() {return blogKeyword.getKeyword();}
+    
+    public String getKeywordFromBlogKeyword() {
+        return blogKeyword.getKeyword();
+    }
 
+    @Builder
+    public RoadmapNode(Roadmap roadmap, Integer width, Integer height, String sourcePosition, String targetPosition, String clientNodeId,
+                       String type, String detailedContent, RoadmapNodeStyle style, RoadmapNodeData data, RoadmapNodePosition position,
+                       RoadmapNodePositionAbsolute positionAbsolute, BlogKeyword blogKeyword) {
+        this.roadmap = roadmap;
+        this.clientNodeId = clientNodeId;
+        this.width = width;
+        this.height = height;
+        this.sourcePosition = sourcePosition;
+        this.targetPosition = targetPosition;
+        this.type = type;
+        this.detailedContent = detailedContent;
+        this.style = style;
+        this.data = data;
+        this.position = position;
+        this.positionAbsolute = positionAbsolute;
+        this.blogKeyword = blogKeyword;
+    }
 }

@@ -19,7 +19,7 @@ public class LikeServiceImpl implements LikeService {
 
     @Transactional
     public boolean isLiked(Long roadmapId, Long memberId) {
-        return likeRepository.existByRoadmapIdAndMemberId(roadmapId, memberId);
+        return likeRepository.existsByRoadmapIdAndMemberId(roadmapId, memberId);
     }
     @Transactional
     public int getLikeCount(Long roadmapId) {
